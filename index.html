@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+</head>
+
+<body>
+    <div id="blob"></div>
+    <div id="blur"></div>
+
+    <h1 id="header" data-value="DNA Research">DNA Research</h1>
+
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+        <img class="image" id="dna" src="https://images.unsplash.com/photo-1641903202531-bfa6bf0c6419?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" draggable="false"/>
+        <img class="image" id="misconceptions" src="https://images.unsplash.com/photo-1507494924047-60b8ee826ca9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80" draggable="false"/>
+        <img class="image" id="questioner" src="https://images.unsplash.com/photo-1484069560501-87d72b0c3669?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" draggable="false"/>
+        <img class="image" id="data" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" draggable="false"/>
+        <img class="image" id="analysis" src="https://images.unsplash.com/photo-1496096265110-f83ad7f96608?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" draggable="false"/>
+        <img class="image" id="conclusion" src="https://images.unsplash.com/photo-1644030692728-6acd106c2d58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80" draggable="false"/>
+        <img class="image" id="sources" src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" draggable="false"/>
+
+        <h2 class="imgalt">DNA</h2>
+        <h2 class="imgalt" style="margin-left: 44vmin">Common Misconceptions</h2>
+        <h2 class="imgalt" style="margin-left: 88vmin">Our Questioner</h2>
+        <h2 class="imgalt" style="margin-left: 132vmin">Results/Data</h2>
+        <h2 class="imgalt" style="margin-left: 176vmin">Analysis</h2>
+        <h2 class="imgalt" style="margin-left: 220vmin">Conclusion</h2>
+        <h2 class="imgalt" style="margin-left: 264vmin">Sources/Credits</h2>
+    </div>
+
+    <div id="menus">
+        <button id="back" onclick="returnToIndex()">←</button>
+        <div style="display: none; z-index: 3; position: fixed" id="dnamenu">
+<!--            <img id="background" src="" alt="">-->
+            <p class="panel" style="margin-top: 0.5vw">By far, one of the least understood parts of the human body is DNA. This
+                is the reason that so much misinformation is spread around the internet.</p>
+            <div class="panel">
+                <h2>What is DNA?</h2>
+                <p>
+                    DNA is a module inside cells that contains all the cells genetic information
+                    DNA is made up of a double-stranded helix held together by weak hydrogen bonds between
+                    purine-pyrimidine nucleotide base pairs: adenine (A) paired with thymine (T)
+                    and guanine (G) paired with cytosine (C). It also allows for genetic information to be
+                    passed from generation to generation.
+
+                </p>
+            </div>
+
+            <div class="panel">
+                <h2>What is the difference between DNA vs RNA?</h2>
+                <p>
+
+                    Many people confuse DNA and RNA due to their similar names and uses. DNA is a more
+                    fragile and more complicated structure when compared to RNA. It has a double helix
+                    while RNA has only one. In addition, DNA contains information on how to make different
+                    proteins that your cells need. This means that your cells can't risk damaging it, so it
+                    doesn't allow anything to directly use/read it. This is where RNA finds its use, as it
+                    can act as a copy of the information stored in the DNA that cells can use/read.
+
+                </p>
+            </div>
+
+        </div>
+
+        <div style="display: none; z-index: 3; position: fixed" id="misconceptionsmenu">
+            <div class="panel">
+                <h2>Common Misconceptions About DNA</h2>
+                <p>
+                    Despite the significant progress made in our understanding of DNA over the years, several
+                    misconceptions still exist about this essential molecule. Here are some of the most
+                    common:
+                </p>
+            </div><br>
+
+            <button id="prev" onclick="prevMisconception()">←</button>
+            <button id="next" onclick="nextMisconception()">→</button>
+            <div id="slideContainer">
+                <div class="slide panel">
+                    <h3>1. Only genes determine traits</h3>
+                    <p>
+                        While genes play a significant role in determining traits, environmental factors, such
+                        as diet and lifestyle, can also influence traits. For instance, someone with the genetic
+                        predisposition for obesity may not become obese if they lead a healthy lifestyle
+                    </p>
+                </div>
+
+                <div class="slide panel">
+                    <h3>2. Only one gene is needed for one trait</h3>
+                    <p>
+                        Most traits are the result of the interactions between multiple genes, and in some
+                        cases, the environment. For instance, height is influenced by several genes
+                    </p>
+                </div>
+
+                <div class="slide panel">
+                    <h3>3. Dominant = popular</h3>
+                    <p>
+                        In genetics, the term "dominant" refers to a gene that is expressed over another gene.
+                        It does not mean that the trait is popular or more desirable
+                    </p>
+                </div>
+
+                <div class="slide panel">
+                    <h3>4. Mutations are harmful</h3>
+                    <p>
+                        While some mutations can be harmful, others can be neutral or even beneficial. For
+                        instance, mutations can give rise to genetic diversity, which is essential for the survival and adaptation of species
+                    </p>
+                </div>
+
+                <div class="slide panel">
+                    <h3>5. Mutations can be fixed</h3>
+                    <p>
+                        While some mutations can be corrected by the body's repair mechanisms, others may be
+                        irreversible. For instance, mutations that occur in the germline cells (i.e., sperm and
+                        egg cells) can be passed down to the next generation
+                    </p>
+                </div>
+
+                <div class="slide panel">
+                    <h3>6. Genes for the eye can only be found in the eye</h3>
+                    <p>
+                        Genes are found in every cell of the body, not just in the organs or tissues that they
+                        code for. Therefore, genes that code for the eye can be found in other parts of the body
+                        as well
+                    </p>
+                </div>
+
+                <div class="slide panel">
+                    <h3>7. Mutations are noticeable</h3>
+                    <p>
+                        Most mutations do not cause noticeable effects and may only be detected through genetic
+                        testing
+                    </p>
+                </div>
+
+                <div class="slide panel">
+                    <h3>8. DNA testing requires saliva/blood</h3>
+                    <p>
+                        While saliva and blood samples are commonly used for DNA testing, other sample types,
+                        such as hair, skin cells, and semen, can also be used
+                    </p>
+                </div>
+
+                <div class="slide panel">
+                    <h3>9. All of your ancestors’ ethnicities will appear in your Ethnicity Estimate</h3>
+                    <p>
+                        Ethnicity estimates are based on genetic similarities between different populations,
+                        and therefore, may not reflect your entire ancestry. Additionally, ethnicity estimates
+                        can vary between different testing companies
+                    </p>
+                </div>
+
+                <div class="slide panel">
+                    <h3>10. DNA tests take a few days to come back</h3>
+                    <p>
+                        The time it takes to receive your DNA test results can vary between different testing
+                        companies and can range from a few days to several weeks
+                    </p>
+                </div>
+            </div>
+            <p style="margin-top: 20vh" class="panel">
+                By debunking these common misconceptions about DNA, we can gain a better understanding
+                of this crucial molecule and its role in shaping who we are
+            </p>
+        </div>
+
+        <div style="display: none; z-index: 3; position: fixed" id="questionermenu">
+            <p class="panel">
+                We conducted a questioner to find out peoples perspective on DNA and how much they know. If you
+                want to complete the questioner click <a href="https://forms.gle/u2feR7CUDTZ9gjVe8">here</a> before continuing.
+            </p>
+            <p class="panel">
+                In the questioner we ask about common misconception to understand how many people believe they
+                are true. Most of it though is to understand how well people know DNA. It contains simple
+                questions like "Is DNA Alive?" and complicated questions like "What is the limiting factor
+                to getting information, from DNA?". All this test the responders knowledge on DNA.
+            </p>
+
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWre6gbAfX2NyRJ5uAN-lrFwinVBjSKZ81w_hgYFbu_oVXPQ/viewform?embedded=true" width="640" height="650" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+
+        <div style="display: none; z-index: 3; position: fixed" id="datamenu">
+
+        </div>
+
+        <div style="display: none; z-index: 3; position: fixed" id="analysismenu">
+
+        </div>
+
+        <div style="display: none; z-index: 3; position: fixed" id="conclusionmenu">
+
+        </div>
+
+        <div style="display: none; z-index: 3; position: fixed" id="sourcesmenu">
+
+        </div>
+    </div>
+
+<!--    <p class="panel">DNA is one of the most misunderstood parts of the human body. This is why there are so many misconceptions around the internet. In this article you will learn how many of the things you know about DNA are actually true</p>-->
+<!--    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWre6gbAfX2NyRJ5uAN-lrFwinVBjSKZ81w_hgYFbu_oVXPQ/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>-->
+    <script src="app.js"></script>
+</body>
+
+</html>
